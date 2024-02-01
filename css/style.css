@@ -814,16 +814,7 @@ a:focus {
     position: relative;
     padding: 45px 0 15px 0;
 }
-	
-.portfolio-container {
-    display: flex;
-    justify-content: center; /* Center the items horizontally */
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-}
 
-.portfolio-item {
-    flex: 0 0 auto; /* Prevents flex items from growing or shrinking */
-}
 .portfolio #portfolio-filter {
     padding: 0;
     margin: -15px 0 25px 0;
@@ -880,64 +871,59 @@ a:focus {
     transition: .5s;
 }
 
-.portfolio .portfolio-item:hover img {
-    margin-left: 15px;
-}
+
 
 .portfolio .portfolio-text {
-	display: flex;
-	justify-content: space-between;
-	align-items: center; 
-	 padding: 15px;	
     position: relative;
-    height: 60px;
-    width: calc(100% - 10px);
+    height: 60px; /* Adjust if necessary */
+    width: calc(100% - 30px);
     margin: -30px 15px 30px 15px;
     display: flex;
     align-items: center;
     background: #ffffff;
     box-shadow: 0 0 15px rgba(0, 0, 0, .12);
+    /* Add the padding-right to prevent the button from overlapping the text */
+    padding-right: 70px; /* Adjust this value as needed, should be width of button + desired spacing */
 }
 
 .portfolio .portfolio-text h3 {
-    font-size: 18px;
+    width: calc(100% - 10px);
+    font-size: 16px;
     font-weight: 600;
     margin: 0 0 0 15px;
-    white-space: normal; /* Allow text wrapping */
-    overflow: visible; /* Let text show */
+    white-space: wrap;
+    overflow: hidden;
 }
 
 .portfolio .portfolio-text a.btn {
-	flex-shrink: 0;
-	margin-left: 10px;
-    width: 50px;
-    height: 50px;
-    padding: 0 0 2px 1px;
+    width: 50px; /* Maintain square shape */
+    height: 50px; /* Maintain square shape */
+    padding: 0px;
+    position: absolute;
+    right: 15px; /* Adjust if necessary */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Ensures vertical centering */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 45px;
     font-weight: 100;
+    border-radius: 0; /* Keeps the button square */
+    transition: .3s; /* Smooth transition for hover effects */
+    z-index: 10; /* Ensure the button stays above other elements */
 }
 
-.portfolio-container .portfolio-item {
-    width: calc(33.33% - 20px); /* Adjust based on your actual margin/padding */
-    margin: 10px; /* Half of 20px to account for spacing on both sides */
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-}
 .portfolio .portfolio-item:hover a.btn {
     color: #EF233C;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #EF233C;
-    border-color: #EF233C;
+    background: #ffffff; /* Change this to the color you want on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, .12); /* Optional: adds shadow on hover */
 }
-/* Hide all portfolio items by default */
 
-
-/* Show portfolio items associated with "Projects" tab by default */
-.portfolio .portfolio-item.filter-1 {
-    display: block;
+/* Ensure the hover effect does not push content around */
+.portfolio .portfolio-item:hover img {
+    transform: scale(1.1);
 }
+
 
 /*******************************/
 /********* Banner CSS **********/
